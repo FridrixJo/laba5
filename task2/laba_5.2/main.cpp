@@ -13,11 +13,11 @@ int main()
 
     cout << "enter the value of n\n";
     double n;
-    cin >> n;
-    double* X = new double[n];
+    cin >> n; // input n
+    double* X = new double[n]; // creating a pointer to a dynamic array of n elements 
     for (int i = 0; i < n; i++) {
         cout << "enter the value of the " << i + 1 << "th member of array\n";
-        cin >> X[i];
+        cin >> X[i]; // input values of array
     }
 
     if (recursion(X, 0, n)) {
@@ -26,7 +26,7 @@ int main()
     else {
         cout << "not for all elements the condition is satisfied\n";
     }
-
+    // freeing heap 
     delete[] X;
     X = NULL;
     FreeLibrary(load);

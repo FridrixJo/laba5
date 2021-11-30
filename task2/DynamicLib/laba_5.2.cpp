@@ -1,8 +1,8 @@
 ﻿#include <cmath>
 extern "C" __declspec(dllexport) bool recursion(double* arr, int begin, int end) {
     int x = end - begin;
-
-    if (x == 1) {
+    // recursion exit conditions
+    if (x == 1) {  
         return cos(arr[begin]) > 0 && cos(arr[end] > 0);
     }
     else if (x == 0) {
