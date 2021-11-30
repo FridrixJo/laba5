@@ -2,6 +2,7 @@
 using namespace std;
 
 int f(int n) {
+    // recursion exit conditions
     if (n % 10 > 0) {
         return n % 10;
     }
@@ -30,10 +31,10 @@ int CorrentInput() {
 }
 int main() {
     cout << "enter p and q (if you wanna exit : write 0 0)\n";
-    int p = CorrentInput(), q = CorrentInput();
-    if (p < 0 && q < 0) {
-        exit(0);
+    int p = CorrentInput(), q = CorrentInput(); // input p and q
+    if (p < 0 && q < 0) { // exit conditions
+        exit(0); 
     }
-    cout << "\n" << s(p, q) << "\n";
+    cout << "\n" << s(p, q) << "\n";  // output 
     return 0;
 }
