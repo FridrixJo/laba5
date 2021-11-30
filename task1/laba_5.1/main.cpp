@@ -1,5 +1,5 @@
 #include <iostream>
-#include "..\laba_5.1\Header.h"
+#include "..\StaticLib\Header.h"
 using namespace std;
 
 int CorrentInput() {
@@ -15,24 +15,24 @@ int CorrentInput() {
 int main()
 {
     cout << "enter the value of n\n";
-    int n = CorrentInput();
+    int n = CorrentInput();  // ввод n
     cout << "enter the value of m\n";
-    int m = CorrentInput();
-    int* S = new int[m];
-    int** A = new int* [n];
+    int m = CorrentInput();  // ввод m
+    int* S = new int[m]; //создание указателся на динамический массив из m элементов 
+    int** A = new int* [n]; // создание одномерного массива указателей на одномерные массивы
 
     for (int i = 0; i < n; i++) {
-        A[i] = new int[m];
+        A[i] = new int[m]; // выделение динамической памяти
     }
     cout << "full fill your array\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            A[i][j] = CorrentInput();
+            A[i][j] = CorrentInput(); // ввод значений массива
         }
     }
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            cout << A[i][j] << " ";
+            cout << A[i][j] << " "; // вывод массива для проверки правильности ввода
         }
         cout << "\n";
     }
@@ -41,17 +41,18 @@ int main()
         for (int i = 0; i < n; i++) {
             temp += A[i][j];
         }
-        AddItem(S, j, temp);
+        AddItem(S, j, temp); // добавление переменной в новый динамический массив
     }
     int min = INT_MAX;
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++) { // перебор нового динамического массива
         if (S[i] < min) {
-            min = S[i];
+            min = S[i]; // присваивание наименьшего элемента массива к переменной min
         }
     }
-    cout << min << "\n";
+    cout << min << "\n"; // вывод наименьшего значения
+    // освобождение динамической пямяти 
     for (int i = 0; i < n; i++) {
-        delete[] A[i];
+        delete[] A[i]; 
     }
     delete[] S;
     delete[] A;
