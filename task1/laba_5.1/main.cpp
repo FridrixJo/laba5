@@ -13,7 +13,7 @@ int CorrentInput() {
 }
 
 int main()
-{
+    setlocale(LC_ALL, "ru");
     cout << "enter the value of n\n";
     int n = CorrentInput();  // ввод n
     cout << "enter the value of m\n";
