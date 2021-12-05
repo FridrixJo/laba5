@@ -1,3 +1,5 @@
+// option # 8
+
 #include <iostream>
 #include "..\StaticLib\Header.h"
 using namespace std;
